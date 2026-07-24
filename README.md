@@ -50,3 +50,25 @@ npx playwright install
 - Los tests de API van en `tests/api/` y usan helpers de `helpers/`.
 - Los datos de prueba se centralizan en `data/`.
 - Los fixtures compartidos viven en `tests/fixtures/base.fixture.ts`.
+
+## Puntos clave
+
+<!-- playwright.config.ts define dos proyectos separados: 'ui' (Chrome) y 'api',
+     lo que permite ejecutarlos de forma independiente con npm run test:ui o test:api -->
+- `playwright.config.ts` contiene dos proyectos: **ui** (Chrome) y **api**, configurables de forma independiente.
+
+<!-- Las URLs base se inyectan mediante variables de entorno, facilitando el cambio
+     entre ambientes (local, staging, producción) sin tocar el código -->
+- Las URLs base se controlan con `BASE_URL` y `API_BASE_URL` (variables de entorno).
+
+<!-- El pipeline de CI en .github/workflows/ci.yml instala dependencias, browsers
+     y ejecuta todas las pruebas automáticamente en cada push o pull request a main -->
+- El CI corre todas las pruebas en cada push/PR a `main` y sube el reporte HTML como artefacto.
+
+<!-- El patrón Page Object Model (POM) en pages/ desacopla la lógica de navegación
+     de los tests, haciendo el código más mantenible y reutilizable -->
+- Se usa el patrón **Page Object Model (POM)** en `pages/` para mantener los tests limpios y reutilizables.
+
+<!-- Los fixtures en tests/fixtures/base.fixture.ts permiten extender el contexto
+     de Playwright con setup/teardown compartido entre múltiples suites de prueba -->
+- Los fixtures en `tests/fixtures/` centralizan el setup y teardown compartido entre suites.
