@@ -15,18 +15,22 @@ export default defineConfig({
 
   projects: [
     {
+      name: 'basic',
+      testDir: './tests/basic',
+    },
+    {
       name: 'ui',
       testDir: './tests/ui',
       use: {
         ...devices['Desktop Chrome'],
-        baseURL: process.env.BASE_URL ?? 'https://your-app.example.com',
+        baseURL: process.env.BASE_URL ?? 'https://example.com',
       },
     },
     {
       name: 'api',
       testDir: './tests/api',
       use: {
-        baseURL: process.env.API_BASE_URL ?? 'https://api.your-app.example.com',
+        baseURL: process.env.API_BASE_URL ?? 'https://jsonplaceholder.typicode.com',
       },
     },
   ],
