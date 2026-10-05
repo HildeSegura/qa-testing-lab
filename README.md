@@ -72,3 +72,5 @@ npx playwright install
 <!-- Los fixtures en tests/fixtures/base.fixture.ts permiten extender el contexto
      de Playwright con setup/teardown compartido entre múltiples suites de prueba -->
 - Los fixtures en `tests/fixtures/` centralizan el setup y teardown compartido entre suites.
+
+test
