@@ -36,6 +36,10 @@ npx playwright install
 | `npm run test:api` | Solo pruebas de API |
 | `npm run test:headed` | UI en modo headed (visible) |
 | `npm run report` | Ver reporte HTML |
+| `npm run allure:generate` | Genera el reporte Allure en `reports/allure-report` (tras `npm test`) |
+| `npm run allure:open` | Abre el reporte Allure |
+
+El reporte Allure incluye pruebas de UI y API. Requiere Java. En CI se sube como artefacto `allure-report` (y `allure-results`) en cada ejecución de Actions.
 
 ## Variables de entorno
 

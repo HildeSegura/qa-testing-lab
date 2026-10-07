@@ -7,10 +7,12 @@ export default defineConfig({
   reporter: [
     ['list'],
     ['html', { outputFolder: 'reports/html', open: 'never' }],
+    ['allure-playwright', { resultsDir: 'allure-results' }],
   ],
   use: {
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
+    trace: 'retain-on-failure',
   },
 
   projects: [
