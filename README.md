@@ -39,7 +39,7 @@ npx playwright install
 | `npm run allure:generate` | Genera el reporte Allure en `reports/allure-report` (tras `npm test`) |
 | `npm run allure:open` | Abre el reporte Allure |
 
-El reporte Allure incluye pruebas de UI y API. Requiere Java. En CI se sube como artefacto `allure-report` (y `allure-results`) en cada ejecución de Actions.
+El reporte Allure incluye pruebas de UI y API. Requiere Java. En CI se sube como artefacto `allure-report` (y `allure-results`) en cada ejecución de Actions y se publica en GitHub Pages al ejecutar el workflow en `main`. Configura **Settings → Pages → Build and deployment → Source** como **GitHub Actions** para habilitar la publicación.
 
 ## Variables de entorno
 
